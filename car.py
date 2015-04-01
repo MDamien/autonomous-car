@@ -121,7 +121,7 @@ def fake_sim():
             }
         T, B = take_decision(params)
         energy_usage += dt*(T/100*310+1)
-        print('decision', T, B)
+        #print('decision', T, B)
         prev_pos, prev_speed = pos, speed
         pos, speed = one_step(pos, speed, T,B,dt)
         if curr_limit and speed > curr_limit_V+3:
@@ -196,7 +196,7 @@ def take_decision(S):
     return T,B
 
 import sys
-if len(sys.argv) > 5:
+if len(sys.argv) > 1:
     fake_sim()
 else:
     real_sim()
